@@ -26,8 +26,8 @@ only the Eureka Server dependency.
 The second and third applications (the client applications) need the Eureka Discovery Client and Spring Web dependencies.
 
 :server-link: https://start.spring.io/#!type=maven-project&language=java&packaging=jar&groupId=com.example&artifactId=eureka-server&name=eureka-server&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.eureka-server&dependencies=cloud-eureka-server
-:clienta-link: https://start.spring.io/#!type=maven-project&language=java&packaging=jar&groupId=com.example&artifactId=servicea&name=servicea&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.servicea&dependencies=cloud-eureka,web
-:clientb-link: https://start.spring.io/#!type=maven-project&language=java&packaging=jar&groupId=com.example&artifactId=serviceb&name=serviceb&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.serviceb&dependencies=cloud-eureka,web
+:clienta-link: https://start.spring.io/#!type=maven-project&language=java&packaging=jar&groupId=com.example&artifactId=servicea&name=servicea&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.userservice&dependencies=cloud-eureka,web
+:clientb-link: https://start.spring.io/#!type=maven-project&language=java&packaging=jar&groupId=com.example&artifactId=serviceb&name=serviceb&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.orderservice&dependencies=cloud-eureka,web
 
 You can use the following links for pre-initialized projects from Spring Initializr:
 
@@ -110,7 +110,7 @@ Service B:
 ====
 [source,yml]
 ----
-include::serviceb/src/main/resources/application.yml[]
+include::order-service/src/main/resources/application.yml[]
 ----
 ====
 

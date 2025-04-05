@@ -28,9 +28,9 @@ jobs:
         run: ./gradlew build
 
       - name: Build Service A
-        working-directory: ./servicea
+        working-directory: ./order-service
         run: ./gradlew build
 
       - name: Build Service B
-        working-directory: ./serviceb
+        working-directory: ./user-service
         run: ./gradlew build

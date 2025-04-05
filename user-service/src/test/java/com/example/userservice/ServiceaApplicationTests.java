@@ -1,11 +1,11 @@
-package com.example.serviceb;
+package com.example.userservice;
 
 import org.junit.jupiter.api.Test;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServicebApplicationTests {
+class ServiceaApplicationTests {
 
 	@Test
 	void contextLoads() {
