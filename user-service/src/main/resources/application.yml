@@ -1,5 +1,12 @@
 spring:
   application:
-    name: user-service
+    name: user-service  # имя должно быть в нижнем регистре
 server:
   port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+  instance:
+    preferIpAddress: true

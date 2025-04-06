@@ -1,5 +1,6 @@
 # Используем официальный образ JDK
 FROM eclipse-temurin:23-jdk
+RUN apt-get update && apt-get install -y curl
 
 # Устанавливаем рабочую директорию
 WORKDIR /app

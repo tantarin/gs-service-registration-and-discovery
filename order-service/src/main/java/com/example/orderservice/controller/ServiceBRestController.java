@@ -21,8 +21,6 @@ public class ServiceBRestController {
 
 	@GetMapping("helloEureka")
 	public String helloWorld() {
-		var services = discoveryClient.getServices();
-		System.out.println(services);
 		List<ServiceInstance> serviceInstances = discoveryClient.getInstances("user-service");
 		var serviceInstance = serviceInstances.stream().findFirst().orElseThrow();
 		String serviceAResponse = restClient.get()

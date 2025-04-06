@@ -1,0 +1,37 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  eureka-server:
+    image: ttarinskaya/eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - app-network
+
+
+  user-service:
+    image: ttarinskaya/user-service
+    ports:
+      - "8081:8081"  # сопоставляем порт контейнера с портом хоста
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SERVER_PORT=8081  # если сервис использует этот порт
+    networks:
+      - app-network
+    depends_on:
+      - eureka-server
+
+
+  order-service:
+    image: ttarinskaya/order-service
+    ports:
+      - "8082:8082"  # сопоставляем порт контейнера с портом хоста
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - SERVER_PORT=8082  # если сервис использует этот порт
+    networks:
+      - app-network
+    depends_on:
+      - eureka-server
